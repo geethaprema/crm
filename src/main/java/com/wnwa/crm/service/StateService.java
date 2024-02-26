@@ -29,7 +29,6 @@ public class StateService {
       return stateRepository.findAll();
    }
 
-   @SuppressWarnings("null")
    public State updateState(State state) {
       State existingState = null;
       Optional<State> optionalDept = stateRepository.findById(state.getStateId());
@@ -44,13 +43,12 @@ public class StateService {
       return existingState;
    }
 
-   @SuppressWarnings("null")
    public String deleteStateByID(Integer id) {
       stateRepository.deleteById(id);
       return "State got deleted";
    }
 
-   @SuppressWarnings("null")
+
    public State getById (Integer id)
     {
         Optional<State> optional = stateRepository.findById(id);

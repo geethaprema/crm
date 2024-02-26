@@ -26,7 +26,7 @@ public class CountyService {
       return countyRepository.findAll();
    } 
 
-   @SuppressWarnings("null")
+
    public County updateCounty(County county) {
       County existingCounty = null;
       Optional<County> optionalDept = countyRepository.findById(county.getCountyId());
@@ -41,7 +41,6 @@ public class CountyService {
       return existingCounty;
    }
 
-   @SuppressWarnings("null")
    public String deleteCountyByID(Integer id) {
       countyRepository.deleteById(id);
       return "County Deleted";
@@ -49,8 +48,7 @@ public class CountyService {
 
    public County getById (Integer id)
     {
-        @SuppressWarnings("null")
-      Optional<County> optional = countyRepository.findById(id);
+        Optional<County> optional = countyRepository.findById(id);
         County county = null;
         if (optional.isPresent())
             county = optional.get();

@@ -15,7 +15,7 @@
 		<form action="#" th:action="@{/getDepartmentDetails}" th:object="${department}"
 			method="POST">
 			<label for="status">Choose Status</label> 
-            <select class="form-control mb-4 col-4" th:field="*{status}"> 
+            <select class="form-control mb-4 col-4" th:field="*{status}" onchange="this.form.submit()"> 
                 <option th:each="status:${deptStatus}" 
                 th:text="${status.status}"
                 th:value="${status.statusId}" ></option> 
@@ -34,7 +34,6 @@
 	<th>Status</th>
 	<th>Comments</th>
 	<th>Follow Up On</th>
-	<th>Action</th>
 </tr>
 </thead>
 <tbody>
